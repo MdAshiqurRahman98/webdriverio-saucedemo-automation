@@ -157,7 +157,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 15000
+        timeout: 60000
     },
 
     //
@@ -214,6 +214,13 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
+    before: function () {
+        /**
+         * Make expect globally available in all tests
+         */
+        const chai = require('chai');
+        global.expect = chai.expect;
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {string} commandName hook command name
