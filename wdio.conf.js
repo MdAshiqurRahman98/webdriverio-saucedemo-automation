@@ -21,8 +21,20 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/*.js'
     ],
+
+    suites: {
+        login: [
+            './test/specs/loginLockedUser.spec.js'
+        ],
+        checkout: [
+            './test/specs/checkoutJourney.spec.js'
+        ],
+        glitchUserCheckout: [
+            './test/specs/glitchUserCheckout.spec.js'
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'

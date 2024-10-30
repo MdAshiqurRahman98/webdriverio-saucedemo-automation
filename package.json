@@ -4,6 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
+    "login": "wdio run ./wdio.conf.js --suite login",
+    "checkout": "wdio run ./wdio.conf.js --suite checkout",
+    "glitchUserCheckout": "wdio run ./wdio.conf.js --suite glitchUserCheckout",
     "getReport": "allure generate allure-results --clean && allure open"
   },
   "keywords": [
