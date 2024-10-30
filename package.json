@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "allure-commandline": "^2.31.0",
+    "chai": "^5.1.2",
     "chromedriver": "^130.0.1",
     "wdio-chromedriver-service": "^8.1.1"
   }
