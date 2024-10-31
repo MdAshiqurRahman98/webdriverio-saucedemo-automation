@@ -1,3 +1,6 @@
+const { join } = require('path');
+const allure = require('@wdio/allure-reporter').default;
+
 exports.config = {
     //
     // ====================
@@ -155,6 +158,7 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     // reporters: [['allure', { outputDir: 'allure-results' }]],
     reporters: [
+        "spec",
         [
             "allure",
             {
@@ -226,11 +230,11 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
-    before: function () {
+    before: async function () {
         /**
          * Make expect globally available in all tests
          */
-        const chai = require('chai');
+        const chai = await import('chai');
         global.expect = chai.expect;
     },
     /**
@@ -289,7 +293,7 @@ exports.config = {
     ) {
         if (error) {
             const screenshot = await browser.takeScreenshot();
-            allure.addAttachment(
+            allure?.addAttachment(
                 "Screenshot",
                 Buffer.from(screenshot, "base64"),
                 "failure/png"
