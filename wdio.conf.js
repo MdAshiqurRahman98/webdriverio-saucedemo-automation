@@ -36,6 +36,11 @@ exports.config = {
         ],
         glitchUserCheckout: [
             './test/specs/glitchUserCheckout.spec.js'
+        ],
+        saucedemo: [
+            './test/specs/loginLockedUser.spec.js',
+            './test/specs/checkoutJourney.spec.js',
+            './test/specs/glitchUserCheckout.spec.js'
         ]
     },
     // Patterns to exclude.
